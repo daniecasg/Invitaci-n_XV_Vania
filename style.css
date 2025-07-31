@@ -99,20 +99,40 @@ video {
 }
 
 .countdown {
-  /* quitar position absolute y transform */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #a5d6a7;
   color: var(--color-primario);
-  padding: 12px 20px;
-  font-size: 2rem;
+  padding: 20px;
+  font-size: 1.5rem;
   border-radius: 20px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  user-select: none;
   max-width: 640px;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
-  margin: 0 auto; /* para centrar */
+  gap: 10px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.countdown-item span {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.countdown-item small {
+  font-size: 0.9rem;
+  color: var(--color-texto);
+  margin-top: 4px;
 }
 
 /* --- Botones generales --- */

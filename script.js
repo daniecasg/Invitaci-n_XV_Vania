@@ -11,9 +11,27 @@ function actualizarCuentaRegresiva() {
     const horas = Math.floor((diferencia % 86400000) / 3600000);
     const minutos = Math.floor((diferencia % 3600000) / 60000);
     const segundos = Math.floor((diferencia % 60000) / 1000);
-    cuentaRegresiva.textContent = `${dias} días ${horas}h ${minutos}m`;
+
+    cuentaRegresiva.innerHTML = `
+      <div class="countdown-item">
+        <span>${dias}</span>
+        <small>D</small>
+      </div>
+      <div class="countdown-item">
+        <span>${horas}</span>
+        <small>H</small>
+      </div>
+      <div class="countdown-item">
+        <span>${minutos}</span>
+        <small>M</small>
+      </div>
+      <div class="countdown-item">
+        <span>${segundos}</span>
+        <small>S</small>
+      </div>
+    `;
   } else {
-    cuentaRegresiva.textContent = "¡Ya comenzó la celebración! 🎉";
+    cuentaRegresiva.innerHTML = "¡Ya comenzó la celebración! 🎉";
     clearInterval(intervalo);
   }
 }
