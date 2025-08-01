@@ -1,4 +1,5 @@
 /* --- Variables de color --- */
+/* Variables CSS para colores principales, secundarios, fondos y acentos. */
 :root {
   --color-primario: #1b5e20;
   --color-secundario: #388e3c;
@@ -10,6 +11,7 @@
 }
 
 /* --- Reset y tipografía --- */
+/* Estilos base para el body, fuente principal y fondo degradado. */
 body {
   margin: 0;
   padding: 0;
@@ -20,6 +22,8 @@ body {
   overflow-x: hidden;
 }
 
+/* --- Títulos principales --- */
+/* Estilos para h1 y h2, fuente decorativa y sombra. */
 h1, h2 {
   font-family: 'Dancing Script', cursive;
   margin: 0.5rem 0 1rem 0;
@@ -29,13 +33,17 @@ h1, h2 {
   font-size: 3rem;
 }
 
+/* --- Subtítulo --- */
+/* Estilo para subtítulos, color secundario y justificado. */
 .subtitulo {
   font-size: 1.3rem;
   color: var(--color-secundario);
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 /* --- Header y portada --- */
+/* Estilos para el encabezado y la imagen de portada. */
 header {
   max-height: 320px;
   overflow: hidden;
@@ -51,6 +59,7 @@ header {
 }
 
 /* --- Contenedores principales --- */
+/* Limita el ancho de las secciones principales y aplica padding. */
 main, .titulo-container, .section {
   max-width: 640px;
   margin: 0 auto;
@@ -62,11 +71,16 @@ main, .titulo-container, .section {
   padding: 25px 15px;
 }
 
+/* --- Texto justificado en secciones --- */
 .section p, .section li {
+  font-size: 1.3rem;
+  color: var(--color-secundario);
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
 /* --- Sección de video ajustada --- */
+/* Contenedor para videos embebidos, centrado y con padding. */
 .video {
   max-width: 640px;
   width: 100%;
@@ -75,6 +89,8 @@ main, .titulo-container, .section {
   box-sizing: border-box;
 }
 
+/* --- Video local --- */
+/* Estilos para el elemento <video>, responsivo y con bordes redondeados. */
 video {
   width: 100%;
   max-width: 640px;
@@ -85,6 +101,7 @@ video {
 }
 
 /* --- Video local responsivo --- */
+/* Contenedor para iframes de video, mantiene relación 16:9 y estilos visuales. */
 .video-local-container {
   position: relative;
   padding-bottom: 56.25%; /* Relación 16:9 */
@@ -97,15 +114,19 @@ video {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* --- Iframe de video --- */
+/* Hace que el iframe ocupe todo el contenedor y sin borde. */
 .video-iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
-/* --- Temporizador cuenta regresiva con bordes redondeados --- */
+/* --- Temporizador cuenta regresiva --- */
+/* Contenedor principal del temporizador, centrado y sin altura fija. */
 .countdown-container {
   margin: 30px 0;
   position: relative;
@@ -114,11 +135,14 @@ video {
   /* quitar height fijo */
 }
 
+/* --- Título del temporizador --- */
 .countdown-title {
   color: var(--color-primario);
   margin-bottom: 10px;
 }
 
+/* --- Temporizador visual --- */
+/* Estilos para la caja del temporizador, fondo, bordes y distribución. */
 .countdown {
   display: flex;
   justify-content: space-around;
@@ -138,6 +162,7 @@ video {
   gap: 10px;
 }
 
+/* --- Elementos individuales del temporizador --- */
 .countdown-item {
   display: flex;
   flex-direction: column;
@@ -157,6 +182,7 @@ video {
 }
 
 /* --- Botones generales --- */
+/* Estilos para botones y confirmación, fondo degradado y efectos hover. */
 button, .btn-confirmar {
   padding: 12px 28px;
   background: linear-gradient(45deg, var(--color-acento-suave), #66bb6a);
@@ -184,6 +210,7 @@ button:focus-visible, .btn-confirmar:focus-visible {
 }
 
 /* --- Enlaces tipo botón --- */
+/* Estilos para enlaces que parecen botones, con efecto hover. */
 a.btn-link {
   text-decoration: none;
   color: var(--color-texto);
@@ -198,6 +225,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Animación heartbeat para botón corazón --- */
+/* Animación para el botón de corazón, efecto latido. */
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
   25% { transform: scale(1.2); }
@@ -223,6 +251,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Fade-in animación --- */
+/* Animación para mostrar elementos suavemente al aparecer. */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -235,9 +264,10 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Responsive --- */
+/* Ajustes de tamaño para pantallas menores a 768px. */
 @media (max-width: 768px) {
   h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.5rem; }
+  h2 { font-size: 2.2rem; }
   button, .btn-confirmar {
     width: 90%;
     max-width: 320px;
@@ -246,6 +276,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Reproductor de música --- */
+/* Controles y barra de progreso para el reproductor de música. */
 .music-controls {
   display: flex;
   justify-content: center;
@@ -289,6 +320,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Lluvia de sobres --- */
+/* Animación y estilos para sobres cayendo en la pantalla. */
 .lluvia-container {
   position: absolute;
   top: 0; left: 0;
@@ -310,12 +342,14 @@ a.btn-link:hover, a.btn-link:focus {
   animation: caer 5s linear infinite;
 }
 
+/* Posiciones y delays para sobres individuales */
 .lluvia-container .sobre:nth-child(1) { left: 10%; animation-delay: 0s; }
 .lluvia-container .sobre:nth-child(2) { left: 30%; animation-delay: 1.2s; }
 .lluvia-container .sobre:nth-child(3) { left: 50%; animation-delay: 2.4s; }
 .lluvia-container .sobre:nth-child(4) { left: 70%; animation-delay: 0.6s; }
 .lluvia-container .sobre:nth-child(5) { left: 90%; animation-delay: 1.8s; }
 
+/* Animación de caída de sobres */
 @keyframes caer {
   0% {
     top: -60px;
@@ -331,6 +365,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Flashes tipo cámara --- */
+/* Animación y estilos para flashes simulando fotos. */
 .hashtag-section {
   position: relative;
   overflow: hidden;
@@ -355,6 +390,7 @@ a.btn-link:hover, a.btn-link:focus {
   border-radius: 50%;
 }
 
+/* Posiciones y delays para flashes individuales */
 .flash:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
 .flash:nth-child(2) { top: 50%; left: 70%; animation-delay: 0.5s; }
 .flash:nth-child(3) { top: 30%; left: 40%; animation-delay: 1s; }
@@ -362,6 +398,7 @@ a.btn-link:hover, a.btn-link:focus {
 .flash:nth-child(5) { top: 55%; left: 25%; animation-delay: 2s; }
 .flash:nth-child(6) { top: 40%; left: 80%; animation-delay: 2.5s; }
 
+/* Animación de flashes */
 @keyframes flash-camara {
   0% { opacity: 0; transform: scale(0.5); }
   2% { opacity: 1; transform: scale(1.4); }
@@ -370,6 +407,7 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* --- Centrados visuales --- */
+/* Centra imágenes, SVGs, iconos y controles en las secciones. */
 .section img,
 .section svg,
 .section .icono-titulo,
@@ -381,6 +419,8 @@ a.btn-link:hover, a.btn-link:focus {
   text-align: center;
 }
 
+/* --- Icono de título --- */
+/* Estilo para iconos decorativos en títulos. */
 .icono-titulo {
   font-size: 2.5rem;
   margin-bottom: 0.3rem;
