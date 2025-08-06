@@ -24,13 +24,24 @@ body {
 
 /* --- Títulos principales --- */
 /* Estilos para h1 y h2, fuente decorativa y sombra. */
-h1, h2 {
+h1,
+h2 {
   font-family: 'Dancing Script', cursive;
   margin: 0.5rem 0 1rem 0;
   color: var(--color-primario);
-  text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-size: 3rem;
+}
+
+/* --- Titulos tercearios --- */
+h3 {
+  font-family: 'Dancing Script', cursive;
+  margin: 0.5rem 0;
+  color: var(--color-secundario);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: right;
+  font-size: 1.5rem;
 }
 
 /* --- Subtítulo --- */
@@ -55,12 +66,14 @@ header {
   max-height: 320px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Contenedores principales --- */
 /* Limita el ancho de las secciones principales y aplica padding. */
-main, .titulo-container, .section {
+main,
+.titulo-container,
+.section {
   max-width: 640px;
   margin: 0 auto;
   padding: 0 15px;
@@ -72,7 +85,8 @@ main, .titulo-container, .section {
 }
 
 /* --- Texto justificado en secciones --- */
-.section p, .section li {
+.section p,
+.section li {
   font-size: 1.3rem;
   color: var(--color-secundario);
   margin-bottom: 1rem;
@@ -104,7 +118,8 @@ video {
 /* Contenedor para iframes de video, mantiene relación 16:9 y estilos visuales. */
 .video-local-container {
   position: relative;
-  padding-bottom: 56.25%; /* Relación 16:9 */
+  padding-bottom: 56.25%;
+  /* Relación 16:9 */
   height: 0;
   overflow: hidden;
   width: 100%;
@@ -183,7 +198,8 @@ video {
 
 /* --- Botones generales --- */
 /* Estilos para botones y confirmación, fondo degradado y efectos hover. */
-button, .btn-confirmar {
+button,
+.btn-confirmar {
   padding: 12px 28px;
   background: linear-gradient(45deg, var(--color-acento-suave), #66bb6a);
   border: none;
@@ -198,13 +214,15 @@ button, .btn-confirmar {
   outline-offset: 3px;
 }
 
-button:hover, .btn-confirmar:hover {
+button:hover,
+.btn-confirmar:hover {
   box-shadow: 0 10px 20px rgba(40, 130, 40, 0.7);
   transform: scale(1.05);
   background: linear-gradient(45deg, #388e3c, var(--color-acento-suave));
 }
 
-button:focus-visible, .btn-confirmar:focus-visible {
+button:focus-visible,
+.btn-confirmar:focus-visible {
   outline: 3px solid var(--color-primario);
   outline-offset: 4px;
 }
@@ -219,7 +237,8 @@ a.btn-link {
   transition: border-color 0.3s;
 }
 
-a.btn-link:hover, a.btn-link:focus {
+a.btn-link:hover,
+a.btn-link:focus {
   border-color: var(--color-acento-suave);
   outline: none;
 }
@@ -227,10 +246,23 @@ a.btn-link:hover, a.btn-link:focus {
 /* --- Animación heartbeat para botón corazón --- */
 /* Animación para el botón de corazón, efecto latido. */
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.2); }
-  50% { transform: scale(0.95); }
-  75% { transform: scale(1.05); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
 }
 
 .heart-button {
@@ -266,9 +298,16 @@ a.btn-link:hover, a.btn-link:focus {
 /* --- Responsive --- */
 /* Ajustes de tamaño para pantallas menores a 768px. */
 @media (max-width: 768px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 2.2rem; }
-  button, .btn-confirmar {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  button,
+  .btn-confirmar {
     width: 90%;
     max-width: 320px;
     font-size: 1.2rem;
@@ -301,7 +340,8 @@ a.btn-link:hover, a.btn-link:focus {
   cursor: pointer;
 }
 
-#musicCurrentTime, .music-duration {
+#musicCurrentTime,
+.music-duration {
   font-size: 1rem;
   color: #6b7a99;
   min-width: 44px;
@@ -314,7 +354,7 @@ a.btn-link:hover, a.btn-link:focus {
   pointer-events: none;
 }
 
-.music-controls:hover ~ .music-progress-container .music-duration,
+.music-controls:hover~.music-progress-container .music-duration,
 .music-progress-container:hover .music-duration {
   opacity: 1;
 }
@@ -323,8 +363,10 @@ a.btn-link:hover, a.btn-link:focus {
 /* Animación y estilos para sobres cayendo en la pantalla. */
 .lluvia-container {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -337,17 +379,36 @@ a.btn-link:hover, a.btn-link:focus {
   background: #fff;
   border: 2px solid #c8c8c8;
   transform: rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0.8;
   animation: caer 5s linear infinite;
 }
 
 /* Posiciones y delays para sobres individuales */
-.lluvia-container .sobre:nth-child(1) { left: 10%; animation-delay: 0s; }
-.lluvia-container .sobre:nth-child(2) { left: 30%; animation-delay: 1.2s; }
-.lluvia-container .sobre:nth-child(3) { left: 50%; animation-delay: 2.4s; }
-.lluvia-container .sobre:nth-child(4) { left: 70%; animation-delay: 0.6s; }
-.lluvia-container .sobre:nth-child(5) { left: 90%; animation-delay: 1.8s; }
+.lluvia-container .sobre:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.lluvia-container .sobre:nth-child(2) {
+  left: 30%;
+  animation-delay: 1.2s;
+}
+
+.lluvia-container .sobre:nth-child(3) {
+  left: 50%;
+  animation-delay: 2.4s;
+}
+
+.lluvia-container .sobre:nth-child(4) {
+  left: 70%;
+  animation-delay: 0.6s;
+}
+
+.lluvia-container .sobre:nth-child(5) {
+  left: 90%;
+  animation-delay: 1.8s;
+}
 
 /* Animación de caída de sobres */
 @keyframes caer {
@@ -356,7 +417,11 @@ a.btn-link:hover, a.btn-link:focus {
     opacity: 0;
     transform: rotate(45deg) scale(0.8);
   }
-  20% { opacity: 1; }
+
+  20% {
+    opacity: 1;
+  }
+
   100% {
     top: 120%;
     transform: rotate(90deg) scale(1.1);
@@ -374,8 +439,10 @@ a.btn-link:hover, a.btn-link:focus {
 
 .flashes-container {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -391,19 +458,63 @@ a.btn-link:hover, a.btn-link:focus {
 }
 
 /* Posiciones y delays para flashes individuales */
-.flash:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.flash:nth-child(2) { top: 50%; left: 70%; animation-delay: 0.5s; }
-.flash:nth-child(3) { top: 30%; left: 40%; animation-delay: 1s; }
-.flash:nth-child(4) { top: 15%; left: 60%; animation-delay: 1.5s; }
-.flash:nth-child(5) { top: 55%; left: 25%; animation-delay: 2s; }
-.flash:nth-child(6) { top: 40%; left: 80%; animation-delay: 2.5s; }
+.flash:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.flash:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.flash:nth-child(3) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+.flash:nth-child(4) {
+  top: 15%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.flash:nth-child(5) {
+  top: 55%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+.flash:nth-child(6) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 2.5s;
+}
 
 /* Animación de flashes */
 @keyframes flash-camara {
-  0% { opacity: 0; transform: scale(0.5); }
-  2% { opacity: 1; transform: scale(1.4); }
-  4% { opacity: 0; transform: scale(1.6); }
-  100% { opacity: 0; transform: scale(0.5); }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  2% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  4% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 
 /* --- Centrados visuales --- */

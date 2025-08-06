@@ -1,169 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XV Años - Vania Maldonado</title>
-  <meta name="description" content="Invitación digital a los XV años de Vania Maldonado. Información de evento, confirmación de asistencia, ubicación y más." />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main id="mainContent" role="main">
-    <header>
-      <img src="de whats/29.jpg" alt="Vania Maldonado sonriente, foto de portada" class="portada" loading="lazy" />
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XV Años - Vania Maldonado</title>
+    <meta
+      name="description"
+      content="Invitación digital a los XV años de Vania Maldonado. Información de evento, confirmación de asistencia, ubicación y más."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="mainContent" role="main">
+      <header>
+        <img
+          src="de whats/29.jpg"
+          alt="Vania Maldonado sonriente, foto de portada"
+          class="portada"
+          loading="lazy"
+        />
+      </header>
 
-    <section class="titulo-container" aria-label="Título principal">
-      <h1>Mis XV Vania Maldonado</h1>
-      <p class="subtitulo">Entre risas que iluminan el alma. ✨
-        <br> Sueños que laten fuerte. 💫
-        <br> Esperanza que nunca se apaga. 🌟
-        <br> Florece una nueva etapa en mi vida… mis XV años. 🎉
-        <br> Será un honor enorme y una alegría inmensa tenerte a mi lado 🤗,
-        compartiendo conmigo este momento único y lleno de magia ✨
-        que guardaré para siempre en el corazón. 💖 </p>
-    </section>
+      <section class="titulo-container" aria-label="Título principal">
+        <h1>Mis XV Vania Maldonado</h1>
+        <h3>23 de Noviembre 2025</h3>
+      </section>
 
-    <section class="section fade-in" aria-label="Ceremonia y Recepción">
-      <div class="icono-titulo" aria-hidden="true">🗓️</div>
-      <h2>23 de Noviembre</h2>
-      <ul>
-        <li>📍 Iglesia: "Por definirse"</li>
-        <li>📍 Salón Reforma Palace</li>
-      </ul>
-    </section>
-    
-    <section class="section countdown-container fade-in" aria-live="polite">
-      <div class="icono-titulo" aria-hidden="true">🕓</div>
-      <h2 class="countdown-title">Solo Faltan</h2>
-      <div class="countdown" id="cuentaRegresiva">
-        <div class="countdown-item"><span id="dias">000</span><small>D</small></div>
-        <div class="countdown-item"><span id="horas">0:00</span><small>H</small></div>
-        <div class="countdown-item"><span id="minutos">0:00</span><small>M</small></div>
-        <div class="countdown-item"><span id="segundos">0:00</span><small>S</small></div>
-      </div>
-    </section>
+      <section class="section countdown-container fade-in" aria-live="polite">
+        <div class="icono-titulo" aria-hidden="true">🕓</div>
+        <h2 class="countdown-title">Solo Faltan</h2>
+        <div class="countdown" id="cuentaRegresiva">
+          <div class="countdown-item">
+            <span id="dias">000</span><small>D</small>
+          </div>
+          <div class="countdown-item">
+            <span id="horas">0:00</span><small>H</small>
+          </div>
+          <div class="countdown-item">
+            <span id="minutos">0:00</span><small>M</small>
+          </div>
+          <div class="countdown-item">
+            <span id="segundos">0:00</span><small>S</small>
+          </div>
+        </div>
+      </section>
 
-    <section class="section musica fade-in" id="musicaSection" aria-label="Sección de música">
-      <div class="icono-titulo" aria-hidden="true">🎵</div>
-      <h2>Presiona el <span class="heart-icon" aria-hidden="true">♥</span> para escuchar mi canción</h2>
-      <div class="music-controls">
-        <button id="btnPlayPause" aria-label="Reproducir o pausar música" type="button" class="heart-button" tabindex="0">♥</button>
-      </div>
-      <div class="music-progress-container">
-        <span id="musicCurrentTime">0:00</span>
-        <input type="range" id="musicProgress" value="0" min="0" max="100" step="1" aria-label="Progreso de la canción" />
-        <span id="musicDuration" class="music-duration">-0:00</span>
-      </div>
-      <audio id="musicaFondo" loop preload="metadata">
-        <source src="musica/Indila - Love-Story.mp3" type="audio/mpeg" />
-        Tu navegador no soporta audio.
-      </audio>
-    </section>
-    
-    <section class="section video fade-in" aria-label="Video de presentación">
-      <div class="icono-titulo" aria-hidden="true">🎥</div>
-      <h2>Video de Presentación</h2>
+      <!-- Nueva sección solo para el mensaje -->
+      <section class="section fade-in" aria-label="Mensaje emotivo">
+        <p class="subtitulo">
+          Entre risas que iluminan el alma. ✨<br />
+          Sueños que laten fuerte. 💫<br />
+          Esperanza que nunca se apaga. 🌟<br />
+          Florece una nueva etapa en mi vida… mis XV años. 🎉<br />
+          Será un honor enorme y una alegría inmensa tenerte a mi lado 🤗,
+          compartiendo conmigo este momento único y lleno de magia ✨ que
+          guardaré para siempre en el corazón. 💖
+        </p>
+      </section>
 
-      <div class="video-local-container">
-        <iframe 
-          id="videoPresentacion"
-          src="https://drive.google.com/file/d/16FFM4VJoA-UdL0dzTfVszjqvA24c4GRA/preview" 
-          frameborder="0" 
-          allow="autoplay" 
-          allowfullscreen 
-          class="video-iframe"
-         aria-label="Video de presentación de Vania">
-        </iframe>
-      </div>
-    </section>
+      <section class="section fade-in" aria-label="Ceremonia y Recepción">
+        <div class="icono-titulo" aria-hidden="true">🗓️</div>
+        <h2>23 de Noviembre</h2>
+        <ul>
+          <li>📍 Iglesia: "Por definirse"</li>
+          <li>📍 Salón Reforma Palace</li>
+        </ul>
+      </section>
 
-    <section class="section fade-in" aria-label="Lluvia de sobres">
-      <div class="icono-titulo" aria-hidden="true">💌</div>
-      <h2>Lluvia de Sobres</h2>
-      <p>
-        La <strong>lluvia de sobres</strong> es una tradición especial que permite a los invitados regalarle
-        a la festejada una muestra de cariño en forma de un <strong>incentivo económico</strong>, entregado
-        con amor y discreción en un sobre el día del evento.
-      </p>
-      <div class="lluvia-container" aria-hidden="true">
-        <div class="sobre"></div>
-        <div class="sobre"></div>
-        <div class="sobre"></div>
-        <div class="sobre"></div>
-        <div class="sobre"></div>
-      </div>
-    </section>
+      <section
+        class="section musica fade-in"
+        id="musicaSection"
+        aria-label="Sección de música"
+      >
+        <div class="icono-titulo" aria-hidden="true">🎵</div>
+        <h2>
+          Presiona el <span class="heart-icon" aria-hidden="true">♥</span> para
+          escuchar mi canción
+        </h2>
+        <div class="music-controls">
+          <button
+            id="btnPlayPause"
+            aria-label="Reproducir o pausar música"
+            type="button"
+            class="heart-button"
+            tabindex="0"
+          >
+            ♥
+          </button>
+        </div>
+        <div class="music-progress-container">
+          <span id="musicCurrentTime">0:00</span>
+          <input
+            type="range"
+            id="musicProgress"
+            value="0"
+            min="0"
+            max="100"
+            step="1"
+            aria-label="Progreso de la canción"
+          />
+          <span id="musicDuration" class="music-duration">-0:00</span>
+        </div>
+        <audio id="musicaFondo" loop preload="metadata">
+          <source src="musica/Indila - Love-Story.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio.
+        </audio>
+      </section>
 
-    <section class="section fade-in hashtag-section" aria-label="Hashtag del evento">
-      <div class="icono-titulo" aria-hidden="true">📷</div>
-      <h2>Hashtag del evento</h2>
-      <p>Comparte tus fotos usando <strong>#VaniaFest2025</strong></p>
-      <p>¡Nos encantaría ver tus momentos especiales!</p>
-      <div class="flashes-container" aria-hidden="true">
-        <div class="flash"></div>
-        <div class="flash"></div>
-        <div class="flash"></div>
-        <div class="flash"></div>
-        <div class="flash"></div>
-        <div class="flash"></div>
-      </div>
-    </section>
+      <section class="section video fade-in" aria-label="Video de presentación">
+        <div class="icono-titulo" aria-hidden="true">🎥</div>
+        <h2>Video de Presentación</h2>
 
-    <section class="section fade-in" aria-label="Políticas del evento">
-      <div class="icono-titulo" aria-hidden="true">📋</div>
-      <h2>Políticas del Evento</h2>
-      <ul>
-        <li>Prohibido fumar dentro del salón de eventos.</li>
-        <li>Llegar puntualmente.</li>
-        <li>Código de vestimenta formal.</li>
-      </ul>
-    </section>
+        <div class="video-local-container">
+          <iframe
+            id="videoPresentacion"
+            src="https://drive.google.com/file/d/16FFM4VJoA-UdL0dzTfVszjqvA24c4GRA/preview"
+            frameborder="0"
+            allow="autoplay"
+            allowfullscreen
+            class="video-iframe"
+            aria-label="Video de presentación de Vania"
+          >
+          </iframe>
+        </div>
+      </section>
 
-    <section class="section fade-in" aria-label="Itinerario">
-      <div class="icono-titulo" aria-hidden="true">🗓️</div>
-      <h2>Itinerario</h2>
-      <ul>
-        <li>16:00 – Ceremonia en Iglesia "Por definirse"</li>
-        <li>17:30 – Sesión de fotos</li>
-        <li>18:30 – Recepción en Salón Reforma Palace</li>
-        <li>20:00 – Cena</li>
-        <li>21:30 – Baile del vals</li>
-        <li>22:00 – Fiesta</li>
-      </ul>
-    </section>
+      <section class="section fade-in" aria-label="Lluvia de sobres">
+        <div class="icono-titulo" aria-hidden="true">💌</div>
+        <h2>Lluvia de Sobres</h2>
+        <p>
+          La <strong>lluvia de sobres</strong> es una tradición especial que
+          permite a los invitados regalarle a la festejada una muestra de cariño
+          en forma de un <strong>incentivo económico</strong>, entregado con
+          amor y discreción en un sobre el día del evento.
+        </p>
+        <div class="lluvia-container" aria-hidden="true">
+          <div class="sobre"></div>
+          <div class="sobre"></div>
+          <div class="sobre"></div>
+          <div class="sobre"></div>
+          <div class="sobre"></div>
+        </div>
+      </section>
 
-    <section class="section fade-in" aria-label="Cómo llegar">
-      <div class="icono-titulo" aria-hidden="true">🗺️</div>
-      <h2>Cómo Llegar</h2>
-      <ul>
-        <li>
-          <a href="https://www.google.com/maps/place/Parroquia+de+San+Ildefonso" target="_blank" rel="noopener noreferrer" class="btn-link">
-            Iglesia: "Por definirse"
-          </a>
-        </li>
-        <li style="margin-top: 12px;">
-          <a href="https://maps.app.goo.gl/ic9qoabw2zESPo1e7" target="_blank" rel="noopener noreferrer" class="btn-link">
-            Salón Reforma Palace
-          </a>
-        </li>
-      </ul>
-    </section>
+      <section
+        class="section fade-in hashtag-section"
+        aria-label="Hashtag del evento"
+      >
+        <div class="icono-titulo" aria-hidden="true">📷</div>
+        <h2>Hashtag del evento</h2>
+        <p>Comparte tus fotos usando <strong>#VaniaFest2025</strong></p>
+        <p>¡Nos encantaría ver tus momentos especiales!</p>
+        <div class="flashes-container" aria-hidden="true">
+          <div class="flash"></div>
+          <div class="flash"></div>
+          <div class="flash"></div>
+          <div class="flash"></div>
+          <div class="flash"></div>
+          <div class="flash"></div>
+        </div>
+      </section>
 
-    <section class="section fade-in" aria-label="Confirmar asistencia">
-      <div class="icono-titulo" aria-hidden="true">📱</div>
-      <h2>Confirmar Asistencia</h2>
-      <p>Haz clic abajo para confirmar tu asistencia por WhatsApp:</p>
-      <a href="https://wa.me/525647145168?text=Hola,%20somos%20[NOMBRES%20DE%20LOS%20ASISTENTES],%20confirmamos%20nuestra%20asistencia%20a%20los%20XV%20años%20de%20Vania"
-         target="_blank" rel="noopener noreferrer" class="btn-link" aria-label="Confirmar asistencia por WhatsApp">
-        <button class="btn-confirmar" type="button">Confirmar por WhatsApp</button>
-      </a>
-    </section>
-  </main>
-  <footer style="margin: 2rem 0 1rem 0; text-align: center; color: #6b7a99;">
-    <small>¡Gracias por ser parte de este día tan especial!<br>© 2025 Vania Maldonado. Todos los derechos reservados.</small>
-  </footer>
-  <script src="script.js"></script>
-</body>
+      <section class="section fade-in" aria-label="Políticas del evento">
+        <div class="icono-titulo" aria-hidden="true">📋</div>
+        <h2>Políticas del Evento</h2>
+        <ul>
+          <li>Prohibido fumar dentro del salón de eventos.</li>
+          <li>Llegar puntualmente.</li>
+          <li>Código de vestimenta formal.</li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-label="Itinerario">
+        <div class="icono-titulo" aria-hidden="true">🗓️</div>
+        <h2>Itinerario</h2>
+        <ul>
+          <li>16:00 – Ceremonia en Iglesia "Por definirse"</li>
+          <li>17:30 – Sesión de fotos</li>
+          <li>18:30 – Recepción en Salón Reforma Palace</li>
+          <li>20:00 – Cena</li>
+          <li>21:30 – Baile del vals</li>
+          <li>22:00 – Fiesta</li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-label="Cómo llegar">
+        <div class="icono-titulo" aria-hidden="true">🗺️</div>
+        <h2>Cómo Llegar</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.google.com/maps/place/Parroquia+de+San+Ildefonso"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-link"
+            >
+              Iglesia: "Por definirse"
+            </a>
+          </li>
+          <li style="margin-top: 12px">
+            <a
+              href="https://maps.app.goo.gl/ic9qoabw2zESPo1e7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-link"
+            >
+              Salón Reforma Palace
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section fade-in" aria-label="Confirmar asistencia">
+        <div class="icono-titulo" aria-hidden="true">📱</div>
+        <h2>Confirmar Asistencia</h2>
+        <p>Haz clic abajo para confirmar tu asistencia por WhatsApp:</p>
+        <a
+          href="https://wa.me/525647145168?text=Hola,%20somos%20[NOMBRES%20DE%20LOS%20ASISTENTES],%20confirmamos%20nuestra%20asistencia%20a%20los%20XV%20años%20de%20Vania"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-link"
+          aria-label="Confirmar asistencia por WhatsApp"
+        >
+          <button class="btn-confirmar" type="button">
+            Confirmar por WhatsApp
+          </button>
+        </a>
+      </section>
+    </main>
+    <footer style="margin: 2rem 0 1rem 0; text-align: center; color: #6b7a99">
+      <small
+        >¡Gracias por ser parte de este día tan especial!<br />© 2025 Vania
+        Maldonado. Todos los derechos reservados.</small
+      >
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
