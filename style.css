@@ -29,7 +29,7 @@ h2 {
   font-family: 'Dancing Script', cursive;
   margin: 0.5rem 0 1rem;
   color: var(--color-primario);
-  text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   text-align: center;
   font-size: 3rem;
 }
@@ -49,6 +49,7 @@ header {
   display: flex;
   justify-content: center;
 }
+
 .portada {
   width: 908px;
   max-width: 100%;
@@ -58,16 +59,22 @@ header {
 
 /* --- Contenedores principales --- */
 /* Limita el ancho de las secciones principales y aplica padding. */
-main, .titulo-container, .section, .video {
+main,
+.titulo-container,
+.section,
+.video {
   max-width: 640px;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
 }
+
 .section {
   padding: 25px 15px;
 }
-.section p, .section li {
+
+.section p,
+.section li {
   font-size: 1.3rem;
   color: var(--color-secundario);
   margin-bottom: 1rem;
@@ -80,10 +87,11 @@ video {
   width: 100%;
   max-width: 640px;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   display: block;
 }
+
 .video-local-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -93,12 +101,15 @@ video {
   max-width: 800px;
   margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .video-iframe {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
 }
 
@@ -110,10 +121,12 @@ video {
   max-width: 100%;
   text-align: center;
 }
+
 .countdown-title {
   color: var(--color-primario);
   margin-bottom: 10px;
 }
+
 .countdown {
   display: flex;
   justify-content: space-around;
@@ -124,7 +137,7 @@ video {
   font-size: 1.5rem;
   border-radius: 20px;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
@@ -132,16 +145,19 @@ video {
   box-sizing: border-box;
   gap: 10px;
 }
+
 .countdown-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
 }
+
 .countdown-item span {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
 .countdown-item small {
   font-size: 0.9rem;
   color: var(--color-texto);
@@ -150,7 +166,8 @@ video {
 
 /* --- Botones generales y enlaces tipo botón --- */
 /* Estilos para botones y confirmación, fondo degradado y efectos hover. */
-button, .btn-confirmar {
+button,
+.btn-confirmar {
   padding: 12px 28px;
   background: linear-gradient(45deg, var(--color-acento-suave), #66bb6a);
   border: none;
@@ -159,20 +176,25 @@ button, .btn-confirmar {
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 6px 10px rgba(67,160,71,0.5);
+  box-shadow: 0 6px 10px rgba(67, 160, 71, 0.5);
   transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
   user-select: none;
   outline-offset: 3px;
 }
-button:hover, .btn-confirmar:hover {
-  box-shadow: 0 10px 20px rgba(40,130,40,0.7);
+
+button:hover,
+.btn-confirmar:hover {
+  box-shadow: 0 10px 20px rgba(40, 130, 40, 0.7);
   transform: scale(1.05);
   background: linear-gradient(45deg, #388e3c, var(--color-acento-suave));
 }
-button:focus-visible, .btn-confirmar:focus-visible {
+
+button:focus-visible,
+.btn-confirmar:focus-visible {
   outline: 3px solid var(--color-primario);
   outline-offset: 4px;
 }
+
 a.btn-link {
   text-decoration: none;
   color: var(--color-texto);
@@ -180,7 +202,9 @@ a.btn-link {
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s;
 }
-a.btn-link:hover, a.btn-link:focus {
+
+a.btn-link:hover,
+a.btn-link:focus {
   border-color: var(--color-acento-suave);
   outline: none;
 }
@@ -188,11 +212,25 @@ a.btn-link:hover, a.btn-link:focus {
 /* --- Animación heartbeat para botón corazón --- */
 /* Animación para el botón de corazón, efecto latido. */
 @keyframes heartbeat {
-  0%, 100% { transform: scale(1);}
-  25% { transform: scale(1.2);}
-  50% { transform: scale(0.95);}
-  75% { transform: scale(1.05);}
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  75% {
+    transform: scale(1.05);
+  }
 }
+
 .heart-button {
   font-size: 3rem;
   background: transparent;
@@ -203,6 +241,7 @@ a.btn-link:hover, a.btn-link:focus {
   display: block;
   margin: 0 auto;
 }
+
 .heart-button.corazon-activo {
   color: var(--color-acento);
   animation: heartbeat 1.5s infinite;
@@ -216,6 +255,7 @@ a.btn-link:hover, a.btn-link:focus {
   transform: translateY(20px);
   transition: opacity 1s, transform 1s;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -224,8 +264,14 @@ a.btn-link:hover, a.btn-link:focus {
 /* --- Responsive --- */
 /* Ajustes de tamaño para pantallas menores a 768px. */
 @media (max-width: 768px) {
-  h1, h2 { font-size: 2.2rem; }
-  button, .btn-confirmar {
+
+  h1,
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  button,
+  .btn-confirmar {
     width: 90%;
     max-width: 320px;
     font-size: 1.2rem;
@@ -240,6 +286,7 @@ a.btn-link:hover, a.btn-link:focus {
   align-items: center;
   margin-top: 10px;
 }
+
 .music-progress-container {
   display: flex;
   align-items: center;
@@ -247,6 +294,7 @@ a.btn-link:hover, a.btn-link:focus {
   gap: 12px;
   margin-top: 18px;
 }
+
 #musicProgress {
   width: 180px;
   accent-color: #6b7a99;
@@ -255,17 +303,21 @@ a.btn-link:hover, a.btn-link:focus {
   background: #e0e7ef;
   cursor: pointer;
 }
-#musicCurrentTime, .music-duration {
+
+#musicCurrentTime,
+.music-duration {
   font-size: 1rem;
   color: #6b7a99;
   min-width: 44px;
   text-align: center;
   transition: opacity 0.2s;
 }
+
 .music-duration {
   opacity: 0;
   pointer-events: none;
 }
+
 .music-controls:hover~.music-progress-container .music-duration,
 .music-progress-container:hover .music-duration {
   opacity: 1;
@@ -275,31 +327,68 @@ a.btn-link:hover, a.btn-link:focus {
 /* Animación y estilos para sobres cayendo en la pantalla. */
 .lluvia-container {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
+
 .lluvia-container .sobre {
   position: absolute;
   top: -50px;
-  width: 30px; height: 20px;
+  width: 30px;
+  height: 20px;
   background: #fff;
   border: 2px solid #c8c8c8;
   transform: rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0.8;
   animation: caer 5s linear infinite;
 }
-.lluvia-container .sobre:nth-child(1) { left: 10%; animation-delay: 0s;}
-.lluvia-container .sobre:nth-child(2) { left: 30%; animation-delay: 1.2s;}
-.lluvia-container .sobre:nth-child(3) { left: 50%; animation-delay: 2.4s;}
-.lluvia-container .sobre:nth-child(4) { left: 70%; animation-delay: 0.6s;}
-.lluvia-container .sobre:nth-child(5) { left: 90%; animation-delay: 1.8s;}
+
+.lluvia-container .sobre:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.lluvia-container .sobre:nth-child(2) {
+  left: 30%;
+  animation-delay: 1.2s;
+}
+
+.lluvia-container .sobre:nth-child(3) {
+  left: 50%;
+  animation-delay: 2.4s;
+}
+
+.lluvia-container .sobre:nth-child(4) {
+  left: 70%;
+  animation-delay: 0.6s;
+}
+
+.lluvia-container .sobre:nth-child(5) {
+  left: 90%;
+  animation-delay: 1.8s;
+}
+
 @keyframes caer {
-  0% { top: -60px; opacity: 0; transform: rotate(45deg) scale(0.8);}
-  20% { opacity: 1;}
-  100% { top: 120%; transform: rotate(90deg) scale(1.1); opacity: 0;}
+  0% {
+    top: -60px;
+    opacity: 0;
+    transform: rotate(45deg) scale(0.8);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 120%;
+    transform: rotate(90deg) scale(1.1);
+    opacity: 0;
+  }
 }
 
 /* --- Flashes tipo cámara --- */
@@ -309,45 +398,163 @@ a.btn-link:hover, a.btn-link:focus {
   overflow: hidden;
   z-index: 1;
 }
+
 .flashes-container {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
+
 .flash {
   position: absolute;
-  width: 100px; height: 100px;
+  width: 100px;
+  height: 100px;
   background: radial-gradient(white, transparent);
   opacity: 0;
   animation: flash-camara 3s infinite;
   border-radius: 50%;
 }
-.flash:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s;}
-.flash:nth-child(2) { top: 50%; left: 70%; animation-delay: 0.5s;}
-.flash:nth-child(3) { top: 30%; left: 40%; animation-delay: 1s;}
-.flash:nth-child(4) { top: 15%; left: 60%; animation-delay: 1.5s;}
-.flash:nth-child(5) { top: 55%; left: 25%; animation-delay: 2s;}
-.flash:nth-child(6) { top: 40%; left: 80%; animation-delay: 2.5s;}
+
+.flash:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.flash:nth-child(2) {
+  top: 50%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.flash:nth-child(3) {
+  top: 30%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+.flash:nth-child(4) {
+  top: 15%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.flash:nth-child(5) {
+  top: 55%;
+  left: 25%;
+  animation-delay: 2s;
+}
+
+.flash:nth-child(6) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 2.5s;
+}
+
 @keyframes flash-camara {
-  0% { opacity: 0; transform: scale(0.5);}
-  2% { opacity: 1; transform: scale(1.4);}
-  4% { opacity: 0; transform: scale(1.6);}
-  100% { opacity: 0; transform: scale(0.5);}
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  2% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  4% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 
 /* --- Centrados visuales e iconos --- */
 /* Centra imágenes, SVGs, iconos y controles en las secciones. */
-.section img, .section svg, .section .icono-titulo,
-.section .heart-button, .section .music-controls {
+.section img,
+.section svg,
+.section .icono-titulo,
+.section .heart-button,
+.section .music-controls {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
+
 .icono-titulo {
   font-size: 2.5rem;
   margin-bottom: 0.3rem;
   text-align: center;
+}
+
+/* Animación para subrayar de derecha a izquierda y luego 3 parpadeos, después reinicia */
+/* Solo afecta a los enlaces directos dentro de la lista de la sección "Cómo llegar" */
+.section[aria-label="Cómo llegar"] ul li a.btn-link {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-texto);
+}
+
+.section[aria-label="Cómo llegar"] ul li a.btn-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-acento-suave);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: subrayarYParpadeo 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes subrayarYParpadeo {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+
+  33.33% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  38.88% {
+    opacity: 0;
+  }
+
+  44.44% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  55.55% {
+    opacity: 1;
+  }
+
+  61.11% {
+    opacity: 0;
+  }
+
+  66.66% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
