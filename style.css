@@ -37,10 +37,13 @@ h2 {
 /* --- Subtítulo --- */
 /* Estilo para subtítulos, color secundario y justificado. */
 .subtitulo {
-  font-size: 1.3rem;
-  color: var(--color-secundario);
-  margin-bottom: 1rem;
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+  text-align-last: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 20px;
 }
 
 /* --- Header y portada --- */
@@ -72,8 +75,16 @@ main,
 .section {
   padding: 25px 15px;
 }
-
-.section p,
+.section p
+  {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: justify;
+  text-align-last: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 20px;
+}
 .section li {
   font-size: 1.3rem;
   color: var(--color-secundario);
