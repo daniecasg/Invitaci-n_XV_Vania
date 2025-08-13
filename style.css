@@ -75,8 +75,8 @@ main,
 .section {
   padding: 25px 15px;
 }
-.section p
-  {
+
+.section p {
   max-width: 600px;
   margin: 0 auto;
   text-align: justify;
@@ -85,6 +85,7 @@ main,
   line-height: 1.6;
   padding: 20px;
 }
+
 .section li {
   font-size: 1.3rem;
   color: var(--color-secundario);
@@ -136,6 +137,21 @@ video {
 .countdown-title {
   color: var(--color-primario);
   margin-bottom: 10px;
+}
+
+.countdown-subtitle {
+  font-size: 1.8rem; /* tamaño base para escritorio */
+  line-height: 1;    /* sin espacio extra */
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+/* Ajuste responsivo para móviles */
+@media (max-width: 768px) {
+  .countdown-subtitle {
+    font-size: 1.4rem; /* tamaño más adecuado para pantallas pequeñas */
+  }
 }
 
 .countdown {
