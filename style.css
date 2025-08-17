@@ -585,3 +585,25 @@ a.btn-link:focus {
     opacity: 1;
   }
 }
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0; /* separa del contenido */
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 6px solid #ccc; /* grosor y color de la línea */
+}
+
+.separator:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 10px;
+}
