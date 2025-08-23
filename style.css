@@ -140,8 +140,10 @@ video {
 }
 
 .countdown-subtitle {
-  font-size: 1.8rem; /* tamaño base para escritorio */
-  line-height: 1;    /* sin espacio extra */
+  font-size: 1.8rem;
+  /* tamaño base para escritorio */
+  line-height: 1;
+  /* sin espacio extra */
   margin: 0 0 10px;
   font-weight: 700;
   color: var(--color-primario);
@@ -150,7 +152,8 @@ video {
 /* Ajuste responsivo para móviles */
 @media (max-width: 768px) {
   .countdown-subtitle {
-    font-size: 1.4rem; /* tamaño más adecuado para pantallas pequeñas */
+    font-size: 1.4rem;
+    /* tamaño más adecuado para pantallas pequeñas */
   }
 }
 
@@ -590,14 +593,16 @@ a.btn-link:focus {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 30px 0; /* separa del contenido */
+  margin: 30px 0;
+  /* separa del contenido */
 }
 
 .separator::before,
 .separator::after {
   content: "";
   flex: 1;
-  border-bottom: 6px solid #ccc; /* grosor y color de la línea */
+  border-bottom: 6px solid #ccc;
+  /* grosor y color de la línea */
 }
 
 .separator:not(:empty)::before {
