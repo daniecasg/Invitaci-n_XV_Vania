@@ -615,10 +615,19 @@ a.btn-link:focus {
 
 .imagen-mensaje {
   width: 100%;
-  max-width: 640px; /* se adapta a tu layout */
-  height: auto;     /* mantiene proporción */
+  max-width: 640px; /* límite en pantallas grandes */
+  height: auto;
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   display: block;
   margin: 0 auto;
 }
+
+/* Ajustes solo en móviles */
+@media (max-width: 480px) {
+  .imagen-mensaje {
+    max-width: 90%;  /* deja un pequeño margen */
+    border-radius: 12px; /* esquinas menos marcadas en móvil */
+  }
+}
+
