@@ -612,3 +612,13 @@ a.btn-link:focus {
 .separator:not(:empty)::after {
   margin-left: 10px;
 }
+
+.imagen-mensaje {
+  width: 100%;
+  max-width: 640px; /* se adapta a tu layout */
+  height: auto;     /* mantiene proporción */
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 0 auto;
+}
