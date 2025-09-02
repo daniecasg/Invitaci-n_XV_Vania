@@ -107,3 +107,22 @@ function formatoTiempo(segundos) {
   const ss = s % 60;
   return `${m}:${ss.toString().padStart(2, "0")}`;
 }
+
+// Detecta cuando el pergamino entra en el viewport
+document.addEventListener("DOMContentLoaded", () => {
+  const pergaminos = document.querySelectorAll(".pergamino-container");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible"); // se reinicia cuando sale
+      }
+    });
+  }, {
+    threshold: 0.3 // se activa con el 30% visible
+  });
+
+  pergaminos.forEach(perg => observer.observe(perg));
+});
