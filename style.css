@@ -615,7 +615,8 @@ a.btn-link:focus {
 
 .imagen-mensaje {
   width: 100%;
-  max-width: 640px; /* límite en pantallas grandes */
+  max-width: 640px;
+  /* límite en pantallas grandes */
   height: auto;
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
@@ -626,8 +627,46 @@ a.btn-link:focus {
 /* Ajustes solo en móviles */
 @media (max-width: 480px) {
   .imagen-mensaje {
-    max-width: 90%;  /* deja un pequeño margen */
-    border-radius: 12px; /* esquinas menos marcadas en móvil */
+    max-width: 90%;
+    /* deja un pequeño margen */
+    border-radius: 12px;
+    /* esquinas menos marcadas en móvil */
   }
 }
 
+/* Estilos exclusivos de la sección de padres y padrinos */
+.padres-padrinos {
+  display: flex;
+  justify-content: center;
+  /* centra la caja en la sección */
+  padding: 40px 20px;
+  text-align: center;
+  /* centra solo el bloque */
+}
+
+.padres-padrinos .contenido {
+  text-align: left;
+  /* ahora sí, texto alineado a la izquierda */
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  /* para mantenerlo centrado como bloque */
+}
+
+.padres-padrinos h2 {
+  font-size: 2.2rem;
+  color: #1b5e20;
+  margin-bottom: 15px;
+  text-align: center;
+  /* títulos centrados */
+}
+
+.padres-padrinos .subtitulo {
+  font-size: 1.5rem;
+  color: #388e3c;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-family: 'Dancing Script', cursive;
+  text-align: left;
+  /* los nombres quedan alineados a la izquierda */
+}
