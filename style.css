@@ -141,9 +141,7 @@ video {
 
 .countdown-subtitle {
   font-size: 1.8rem;
-  /* tamaño base para escritorio */
   line-height: 1;
-  /* sin espacio extra */
   margin: 0 0 10px;
   font-weight: 700;
   color: var(--color-primario);
@@ -153,7 +151,6 @@ video {
 @media (max-width: 768px) {
   .countdown-subtitle {
     font-size: 1.4rem;
-    /* tamaño más adecuado para pantallas pequeñas */
   }
 }
 
@@ -594,7 +591,6 @@ a.btn-link:focus {
   align-items: center;
   text-align: center;
   margin: 30px 0;
-  /* separa del contenido */
 }
 
 .separator::before,
@@ -602,7 +598,6 @@ a.btn-link:focus {
   content: "";
   flex: 1;
   border-bottom: 6px solid #ccc;
-  /* grosor y color de la línea */
 }
 
 .separator:not(:empty)::before {
@@ -616,7 +611,6 @@ a.btn-link:focus {
 .imagen-mensaje {
   width: 100%;
   max-width: 640px;
-  /* límite en pantallas grandes */
   height: auto;
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
@@ -628,9 +622,7 @@ a.btn-link:focus {
 @media (max-width: 480px) {
   .imagen-mensaje {
     max-width: 90%;
-    /* deja un pequeño margen */
     border-radius: 12px;
-    /* esquinas menos marcadas en móvil */
   }
 }
 
@@ -638,19 +630,15 @@ a.btn-link:focus {
 .padres-padrinos {
   display: flex;
   justify-content: center;
-  /* centra la caja en la sección */
   padding: 40px 20px;
   text-align: center;
-  /* centra solo el bloque */
 }
 
 .padres-padrinos .contenido {
   text-align: left;
-  /* ahora sí, texto alineado a la izquierda */
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  /* para mantenerlo centrado como bloque */
 }
 
 .padres-padrinos h2 {
@@ -658,15 +646,13 @@ a.btn-link:focus {
   color: #1b5e20;
   margin-bottom: 15px;
   text-align: center;
-  /* títulos centrados */
 }
 
 .padres-padrinos .subtitulo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #388e3c;
   margin-bottom: 30px;
   line-height: 1.6;
   font-family: 'Dancing Script', cursive;
   text-align: left;
-  /* los nombres quedan alineados a la izquierda */
 }
