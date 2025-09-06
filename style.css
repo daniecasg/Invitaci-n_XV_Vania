@@ -405,17 +405,16 @@ video {
     LINEA DE TIEMPO
   =================
 */
-
 /* Contenedor de la línea de tiempo */
 .timeline {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  position: relative;
   max-width: 800px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 50px; /* espacio entre filas */
 }
 
 /* Línea central */
@@ -433,16 +432,17 @@ video {
 
 /* Timeline items */
 .timeline-item {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 40px 1fr; /* izquierda | centro | derecha */
-  align-items: center;
-  margin: 50px 0;
   width: 100%;
+  position: relative;
+  align-items: stretch; /* 🔑 todas las celdas a la misma altura */
+  gap: 10px; /* opcional, separación horizontal */
+  align-self: center;
 }
 
 /* Punto del timeline */
-.timeline-item .timeline-point {
+.timeline-point {
   grid-column: 2; /* siempre en el centro */
   justify-self: center;
   width: 16px;
@@ -451,11 +451,15 @@ video {
   border-radius: 50%;
   box-shadow: 0 0 0 4px #fff;
   z-index: 2;
+  align-self: center; /* 🔑 centrado vertical */
 }
 
 /* Texto de los eventos */
 .evento-texto {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 🔑 centra verticalmente */
+  gap: 4px;
 }
 
 .evento-texto.left {
@@ -468,11 +472,11 @@ video {
   grid-column: 3; /* derecha */
 }
 
-/* Íconos */
+/* Iconos de los eventos */
 .evento-icono {
-  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: center; /* 🔑 centra verticalmente */
   align-items: center;
 }
 
@@ -485,8 +489,8 @@ video {
 }
 
 .evento-icono .icono {
-  width: 48px;
-  height: 48px;
+  width: 124px;
+  height: 124px; /* corregido typo de '124x' */
   object-fit: contain;
   z-index: 3;
 }
@@ -739,8 +743,10 @@ a.btn-link:focus {
   .countdown-subtitle {
     font-size: 1.4rem;
   }
+}
 
-  /* Timeline responsive */
+/* Timeline responsivo */
+@media (max-width: 768px) {
   .timeline-item {
     flex-direction: column;
     align-items: center;
@@ -753,10 +759,16 @@ a.btn-link:focus {
     margin: 0 0 8px 0;
   }
 
-  .evento-icono .timeline-point {
+  .timeline-point {
     position: relative;
     transform: none;
     margin-top: 4px;
+  }
+
+  .evento-icono .icono {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
   }
 }
 
