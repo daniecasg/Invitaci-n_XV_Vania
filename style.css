@@ -58,17 +58,18 @@ header {
     MÚSICA (botón, control de audio)
   ====================================
 */
-.music-controls {
+.music-controls,
+.music-progress-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.music-controls {
   margin-top: 10px;
 }
 
 .music-progress-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 12px;
   margin-top: 18px;
 }
@@ -128,17 +129,15 @@ header {
   text-align: center;
 }
 
-.countdown-title {
+.countdown-title,
+.countdown-subtitle {
   color: var(--color-primario);
-  margin-bottom: 10px;
 }
 
 .countdown-subtitle {
   font-size: 1.8rem;
-  line-height: 1;
   margin: 0 0 10px;
   font-weight: 700;
-  color: var(--color-primario);
 }
 
 .countdown {
@@ -155,7 +154,6 @@ header {
   max-width: 640px;
   width: 100%;
   margin: 0 auto;
-  text-align: center;
   box-sizing: border-box;
   gap: 10px;
 }
@@ -201,7 +199,6 @@ header {
   font-size: 2.2rem;
   color: #1b5e20;
   margin-bottom: 15px;
-  text-align: center;
 }
 
 .padres-padrinos .subtitulo {
@@ -402,97 +399,157 @@ video {
 
 /*
   =================
-    LINEA DE TIEMPO
+    Itinerario
   =================
 */
 /* Contenedor de la línea de tiempo */
-.timeline {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 800px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 50px; /* espacio entre filas */
+.section.itinerario {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 60px 20px;
+  min-height: 100vh;
+  text-align: center;
 }
 
-/* Línea central */
+.section.itinerario h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+/* ======= Timeline ======= */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+/* Línea vertical central */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
   top: 0;
   bottom: 0;
+  left: 50%;
   width: 4px;
-  background: var(--color-primario);
+  background: transparent;
   transform: translateX(-50%);
   z-index: 1;
+  height: 100%;
 }
 
-/* Timeline items */
+/* Cada evento es un grid de 3 columnas */
 .timeline-item {
   display: grid;
-  grid-template-columns: 1fr 40px 1fr; /* izquierda | centro | derecha */
-  width: 100%;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
   position: relative;
-  align-items: stretch; /* 🔑 todas las celdas a la misma altura */
-  gap: 10px; /* opcional, separación horizontal */
-  align-self: center;
+  margin-bottom: 80px;
 }
 
-/* Punto del timeline */
+/* Punto central */
 .timeline-point {
-  grid-column: 2; /* siempre en el centro */
+  grid-column: 2;
   justify-self: center;
-  width: 16px;
-  height: 16px;
-  background: var(--color-acento);
+  align-self: center;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px #fff;
+  background: var(--color-secundario);
+  box-shadow: 0 0 0 4px #c8ca3d;
   z-index: 2;
-  align-self: center; /* 🔑 centrado vertical */
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Texto de los eventos */
+.timeline-point.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Texto e icono animados */
+.evento-texto,
+.evento-icono {
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Animación de entrada desde la izquierda */
+.timeline-item.left .evento-texto {
+  grid-column: 1;
+  text-align: center;
+  transform: translateX(-80px);
+}
+
+.timeline-item.left .evento-icono {
+  grid-column: 3;
+  transform: translateX(80px);
+}
+
+/* Animación de entrada desde la derecha */
+.timeline-item.right .evento-texto {
+  grid-column: 3;
+  text-align: center;
+  transform: translateX(80px);
+}
+
+.timeline-item.right .evento-icono {
+  grid-column: 1;
+  transform: translateX(-80px);
+}
+
+/* Activación de animación */
+.timeline-item.left .evento-texto.active,
+.timeline-item.left .evento-icono.active,
+.timeline-item.right .evento-texto.active,
+.timeline-item.right .evento-icono.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ======= Texto e iconos ======= */
 .evento-texto {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 🔑 centra verticalmente */
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
-.evento-texto.left {
-  text-align: right;
-  grid-column: 1; /* izquierda */
+.evento-texto .hora {
+  font-weight: bold;
+  font-size: 2.2rem;
 }
 
-.evento-texto.right {
-  text-align: left;
-  grid-column: 3; /* derecha */
+.evento-texto .nombre {
+  font-size: 2rem;
 }
 
-/* Iconos de los eventos */
 .evento-icono {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* 🔑 centra verticalmente */
+  justify-content: center;
   align-items: center;
 }
 
-.evento-icono.left {
-  grid-column: 1;
-}
-
-.evento-icono.right {
-  grid-column: 3;
-}
-
 .evento-icono .icono {
-  width: 124px;
-  height: 124px; /* corregido typo de '124x' */
+  width: 220px;
+  height: 220px;
   object-fit: contain;
-  z-index: 3;
+}
+
+/* Línea animada que recorre la timeline */
+.line-progress {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  background: var(--color-secundario);
+  transform: translateX(-50%);
+  z-index: 2;
+  height: 0;
+  transition: height 0.1s linear;
 }
 
 /*
@@ -743,37 +800,56 @@ a.btn-link:focus {
   .countdown-subtitle {
     font-size: 1.4rem;
   }
-}
 
-/* Timeline responsivo */
-@media (max-width: 768px) {
   .timeline-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    grid-template-columns: 1fr 40px 1fr;
+    margin-bottom: 50px;
   }
 
-  .evento-texto,
-  .evento-icono {
-    width: 100%;
-    margin: 0 0 8px 0;
+  .timeline-point,
+  .timeline-point.active {
+    width: 14px;
+    height: 14px;
   }
 
-  .timeline-point {
-    position: relative;
-    transform: none;
-    margin-top: 4px;
+  .evento_texto .hora {
+    font-size: 1.4rem;
+  }
+
+  .evento_texto .nombre {
+    font-size: 1rem;
   }
 
   .evento-icono .icono {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
+    width: 120px;
+    height: 120px;
   }
 }
 
-/* Imagen mensaje responsivo */
+/* Timeline muy responsivo */
 @media (max-width: 480px) {
+  .section.itinerario {
+    padding: 30px 5px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr 24px 1fr;
+    margin-bottom: 30px;
+  }
+
+  .evento-texto .hora {
+    font-size: 1rem;
+  }
+
+  .evento-texto .nombre {
+    font-size: 0.8rem;
+  }
+
+  .evento-icono .icono {
+    width: 70px;
+    height: 70px;
+  }
+
   .imagen-mensaje {
     max-width: 90%;
     border-radius: 12px;

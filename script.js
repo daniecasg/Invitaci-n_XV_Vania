@@ -126,3 +126,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   pergaminos.forEach(perg => observer.observe(perg));
 });
+
+// --- Animación de la línea de tiempo ---
+document.addEventListener("DOMContentLoaded", () => {
+  const timeline = document.querySelector('.timeline');
+  const points = document.querySelectorAll('.timeline-point');
+  const items = document.querySelectorAll('.timeline-item');
+
+  // Crear la línea animada
+  const line = document.createElement('div');
+  line.classList.add('line-progress');
+  timeline.appendChild(line);
+
+  // Calcular la altura total de la timeline
+  const timelineRect = timeline.getBoundingClientRect();
+  const timelineHeight = timeline.offsetHeight;
+
+  let currentHeight = 0;
+  const speed = 4; // px por frame
+
+  // Calcular posiciones relativas de los puntos respecto a la timeline
+  const pointPositions = Array.from(points).map(point => {
+    const pointRect = point.getBoundingClientRect();
+    return pointRect.top - timelineRect.top + point.offsetHeight / 2;
+  });
+
+  function animateLine() {
+    currentHeight += speed;
+    if (currentHeight > timelineHeight) currentHeight = timelineHeight;
+    line.style.height = currentHeight + 'px';
+
+    pointPositions.forEach((pointPos, index) => {
+      if (
+        currentHeight >= pointPos &&
+        !points[index].classList.contains('active')
+      ) {
+        points[index].classList.add('active');
+        const texto = items[index].querySelector('.evento-texto');
+        const icono = items[index].querySelector('.evento-icono');
+        texto.classList.add('active');
+        icono.classList.add('active');
+      }
+    });
+
+    if (currentHeight < timelineHeight) {
+      requestAnimationFrame(animateLine);
+    }
+  }
+
+  animateLine();
+});
