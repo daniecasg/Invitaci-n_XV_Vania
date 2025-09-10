@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- Animación de la línea de tiempo ---
 document.addEventListener("DOMContentLoaded", () => {
   const timeline = document.querySelector('.timeline');
+  if (!timeline) return;
+
   const points = document.querySelectorAll('.timeline-point');
   const items = document.querySelectorAll('.timeline-item');
 
@@ -138,20 +140,24 @@ document.addEventListener("DOMContentLoaded", () => {
   line.classList.add('line-progress');
   timeline.appendChild(line);
 
-  // Calcular la altura total de la timeline
-  const timelineRect = timeline.getBoundingClientRect();
   const timelineHeight = timeline.offsetHeight;
-
   let currentHeight = 0;
   const speed = 4; // px por frame
+  let animating = false;
 
   // Calcular posiciones relativas de los puntos respecto a la timeline
-  const pointPositions = Array.from(points).map(point => {
-    const pointRect = point.getBoundingClientRect();
-    return pointRect.top - timelineRect.top + point.offsetHeight / 2;
-  });
+  function getPointPositions() {
+    const timelineRect = timeline.getBoundingClientRect();
+    return Array.from(points).map(point => {
+      const pointRect = point.getBoundingClientRect();
+      return pointRect.top - timelineRect.top + point.offsetHeight / 2;
+    });
+  }
+
+  let pointPositions = getPointPositions();
 
   function animateLine() {
+    if (!animating) return;
     currentHeight += speed;
     if (currentHeight > timelineHeight) currentHeight = timelineHeight;
     line.style.height = currentHeight + 'px';
@@ -174,5 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  animateLine();
+  // Observer para iniciar la animación cuando la timeline es visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animating) {
+        animating = true;
+        pointPositions = getPointPositions(); // recalcular posiciones
+        animateLine();
+      }
+    });
+  }, { threshold: 0.2 }); // con 20% visible arranca
+
+  observer.observe(timeline);
 });
