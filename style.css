@@ -829,7 +829,7 @@ a.btn-link:focus {
 /* Timeline muy responsivo */
 @media (max-width: 480px) {
   .section.itinerario {
-    padding: 30px 5px;
+    padding: 20px 2px;
   }
 
   .timeline-item {
