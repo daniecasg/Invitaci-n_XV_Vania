@@ -409,6 +409,8 @@ video {
   padding: 60px 20px;
   min-height: 100vh;
   text-align: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .section.itinerario h2 {
